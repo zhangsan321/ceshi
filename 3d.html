@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script src="./jquery-1.10.1.min.js"></script>
+
+	<div id="v3dPanel" style="height:520px;top:-80px;"></div>
+		
+
+	<script src="3d_control.js"></script>
+	<script type="text/javascript">
+		
+        $(document).ready(function(){
+            $("#v3dPanel").v3dControl({
+                imgLength: 4,//必填
+                imgPath: "./images/img",//图片路径  可填  默认img/
+                imgType: ".png",//图片类型  可填  默认.png
+                isAuto: false//是否自动播放  可填      默认false
+            })
+        });
+    
+	</script>
+</body>
+</html>	

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>css 转圈</title>
+  <style>
+    .turn{
+      width:100px;
+      height: 100px;
+      background: aqua;
+      border-radius: 50%;
+      overflow: hidden;
+      animation:turn 3s linear infinite;      
+      margin: 100px auto;
+      position: relative;
+    }
+    .turn:before{
+    	position: absolute;
+    	left: 40px;
+    	top: 90px;
+    	content: '';
+    	display: block;
+    	width: 10px;
+    	height: 10px;
+    	border-radius: 50%;
+    	overflow: hidden;
+    	background: red;
+    }
+    .turn01{
+    	position: absolute;
+    	width: 13px;
+    	height: 13px;
+    	border: 1px solid blue;
+    	border-radius: 50%;
+    	content: '';
+    	display: block;
+    	left: 60px;
+    	top: 80px;
+    	animation:turn01 1s linear infinite;
+    }
+    .turn01:before{
+    	position: absolute;
+    	content: '';
+    	display: block;
+    	left:3px;
+    	top: 3px;
+    	width: 5px;
+    	height: 5px;
+    	border-radius: 50%;
+    	overflow: hidden;
+    	background: green;
+
+    }
+
+    /* 
+      turn : 定义的动画名称
+      1s : 动画时间
+      linear : 动画以何种运行轨迹完成一个周期
+      infinite :规定动画应该无限次播放
+     */
+    @keyframes turn{
+      from{-webkit-transform:rotate(0deg);}
+      to{-webkit-transform:rotate(360deg);}
+    }
+    @keyframes turn01{
+      0{border-color:rgba(55,55,55,1);}
+      50%{border-color: rgba(25,25,25,0);}
+      100%{border-color:rgba(55,55,55,1);}
+    }
+  </style>
+</head>
+<body>
+  <div class="turn">
+  	<div class="turn01"></div>
+  </div>
+</body>
+</html>
